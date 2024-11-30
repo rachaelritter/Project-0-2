@@ -15,8 +15,8 @@ def printVehicles():
         print(vehicle)
         
 def searchVehicle():
-    search = input("Please enter the full vehicle name: ")
-    if search in AllowedVehiclesList:
+    search = input("Please enter the full vehicle name: ").strip()
+    if search.lower() in [vehicle.lower() for vehicle in AllowedVehiclesList]:
         print(f"{search} is an authorized vehicle")
     else:
         print(f"{search} is not an authorized vehicle, if you received this in error please check the spelling and try again")
